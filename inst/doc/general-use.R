@@ -2,7 +2,7 @@
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment  = "#>", 
-  error    = TRUE, 
+  # error    = TRUE, 
   purl     = FALSE
 )
 

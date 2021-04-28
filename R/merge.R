@@ -182,6 +182,22 @@ merge <- function(x,
   fixby  <- fix_by_vars(by, x, y)
   by     <- fixby$by
 
+  if (length(by) == 0) {
+    msg     <- "no common variable names in `x` and `y`"
+    hint    <- "Make sure all variables are spelled correctly.
+      Check for upper and lower cases"
+    problem <- "When `by = NULL`, joyn search for common variable
+      names to be used as keys"
+    rlang::abort(c(
+      msg,
+      i = hint,
+      x = problem
+    ),
+    class = "joyn_error"
+    )
+  }
+
+
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #           Consistency of join   ---------
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,42 +205,53 @@ merge <- function(x,
   tx <- gsub("([m1]):([m1])", "\\1", match_type)
   ty <- gsub("([m1]):([m1])", "\\2", match_type)
 
+  match_type_error <- FALSE
+
   if (tx == "1") {
-    join_consistency(x, by, "x")
+
+    isidx <- is_id(x, by = by, verbose = FALSE)
+
+    if(isFALSE(isidx)) {
+
+      match_type_error <- TRUE
+      if (verbose) {
+
+        cli::cli_alert("table {.field x} is not uniquely identified
+                            by {.code {by}}", wrap = TRUE)
+      }
+    }
   }
 
   if (ty == "1") {
-    join_consistency(y, by, "y")
+
+    isidy <- is_id(y, by = by, verbose = FALSE)
+
+    if(isFALSE(isidy)) {
+
+      match_type_error <- TRUE
+
+      if (verbose) {
+
+      cli::cli_alert("table {.field y} is not uniquely identified
+                            by {.code {by}}", wrap = TRUE)
+      }
+    }
+    # join_consistency(y, by, "y")
   }
 
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  #                   Manage by when Null   ---------
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if(match_type_error) {
 
-  if (is.null(by)) {
-    # by <- intersect(names(x), names(y))
-
-    if (length(by) == 0) {
-      msg     <- "no common variable names in `x` and `y`"
-      hint    <- "Make sure all variables are spelled correctly.
-      Check for upper and lower cases"
-      problem <- "When `by = NULL`, joyn search for common variable
-      names to be used as keys"
+      msg     <- "match type inconsistency"
+      hint    <- "you could use `return_report = TRUE` in `joyn::is_id()`
+      to see where the problem is"
       rlang::abort(c(
-                    msg,
-                    i = hint,
-                    x = problem
-                    ),
-                    class = "joyn_error"
-                    )
+        msg,
+        i = hint
+      ),
+      class = "joyn_error"
+      )
 
     }
-
-    if (verbose) {
-      cli::cli_alert_info("joining by {.code {by}}")
-    }
-
-  } # end of isnull by
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #              Variables to keep in y   ---------
@@ -304,8 +331,7 @@ merge <- function(x,
                             wrap = TRUE)
       }
 
-      # yvars    <- yvars[!(yvars %in% upvars)]
-      # y.upvars <- NULL
+      # we remove y.upvars from x ahead in the code when keep_y_in_x is false.
 
     }
   } # end of update vars
@@ -383,9 +409,10 @@ merge <- function(x,
       nrv         <- setdiff(check_names, xnames)
 
       if (verbose) {
-        cli::cli_alert_info("reportvar {.code {reportvar}} is already part of the
-                          resulting table. It will be changed to {.code {nrv}}",
-                          wrap = TRUE)
+        cli::cli_alert_info("reportvar {.code {reportvar}} is already
+                            part of the resulting table. It will be changed
+                            to {.code {nrv}}",
+                            wrap = TRUE)
       }
 
 
@@ -454,7 +481,9 @@ merge <- function(x,
 
   if (!is.null(fixby$xby)) {
     setnames(x, fixby$tempkey, fixby$xby)
-    setnames(y, fixby$tempkey, fixby$yby)
+    by <- fixby$xby
+    # not necessary
+    # setnames(y, fixby$tempkey, fixby$yby)
   }
 
   ## Remove temporal yvars -----
@@ -483,26 +512,18 @@ merge <- function(x,
 
     cli::cli_h2("JOYn Report")
 
-    if (requireNamespace("janitor", quietly = TRUE)) {
+    d <- freq_table(x, reportvar)
 
-      disp <- janitor::tabyl(x, !!reportvar)
-      disp <- janitor::adorn_totals(disp, "row")
-      disp <- janitor::adorn_pct_formatting(disp, digits = 1)
+    print(d[])
 
-      print(disp)
+    cli::cli_rule(right = "End of {.field JOYn} report")
 
-    } else {
-
-      table(x[[reportvar]])
-
-    }
-    cli::cli_rule(right = "End of JOYn report")
-
-    if (all(x[[reportvar]] %in% c("x", "y")) || all(x[[reportvar]] %in% c(1, 2))) {
+    if (all(x[[reportvar]] %in% c("x", "y")) ||
+        all(x[[reportvar]] %in% c(1, 2))) {
       cli::cli_alert_warning(
         cli::col_red("you have no matchig obs. Make sure argument
-                             `by` is correct. Right now, `joyn` is joining by
-                             {.code {by}}"),
+                     `by` is correct. Right now, `joyn` is joining by
+                     {.code {by}}"),
         wrap = TRUE)
     }
   } # end of reporting joyn

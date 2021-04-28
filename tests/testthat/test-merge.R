@@ -1,5 +1,5 @@
 library(data.table)
-options(joyn.verbose = FALSE)
+# options(joyn.verbose = FALSE)
 
 test_that("slect by vars when no specified", {
   expect_equal(merge(x1, y1),
@@ -284,6 +284,12 @@ test_that("match types work", {
     match_type = "1:1"
   ))
   expect_error(merge(
+    y3,
+    x3,
+    by = "id",
+    match_type = "1:1"
+  ))
+  expect_error(merge(
     x3,
     y3,
     by = "id",
@@ -398,6 +404,9 @@ test_that("y vars are extracted correctly", {
   expect_equal(names(jn), c(names(x2), "report"))
 
 
+  yvars <- "reuiou"
+  expect_error(merge(x2,y2,by = "id",yvars = yvars))
+
 })
 
 test_that("selection of reportvar", {
@@ -449,3 +458,60 @@ test_that("Keep Y vars works", {
   expect_true(all(inames  %in% names(jn)))
 
 })
+
+
+test_that("error when there is not natural join", {
+  xx1 <- copy(x1)
+  setnames(xx1, "id", "foo")
+  expect_error(merge(xx1, y1))
+})
+
+
+test_that("different names in key vars are working fine", {
+
+  df <- merge(x4, y4, by = c("id1 = id", "id2"))
+
+  dd <- data.table(id1 = c(1, 1, 2, 2, 3, 3, 5, 6),
+                   id2 = c(1, 1, 2, 1, 3, 4, 2, 3),
+                   t = c(1L, 2L, 1L, NA, 2L, NA, NA, NA),
+                   x = c(16, 12, NA, NA, NA, 15, NA, NA),
+                   y = c(11L, 11L, NA, 15L, NA, 10L, 20L, 13L),
+                   report = c("x & y", "x & y", "x", "y", "x", "x & y", "y", "y")
+                   )
+
+  setorderv(dd, "id1", na.last = TRUE)
+  setattr(dd, 'sorted', "id1")
+
+  expect_equal(df, dd)
+
+})
+
+
+test_that("invalid names are changed", {
+
+  dd <- merge(x1, y1, reportvar = "_report")
+  expect_true("X_report"  %in% names(dd))
+
+})
+
+
+test_that("convert to data.table when dataframe", {
+
+  yy1 <- as.data.frame(y1)
+
+  expect_equal(merge(x1, yy1), merge(x1, y1))
+
+})
+
+
+test_that("no matching obs", {
+
+  xx2 <- x2[1, x := 23]
+
+  dd <- merge(xx2, y2)
+  dw <- dd[, unique(report)]
+  expect_equal(dw, c("y", "x"))
+
+})
+
+
