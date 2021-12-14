@@ -50,10 +50,13 @@ if (getRversion() >= '2.15.1')
 #'   table.
 #' @param update_NAs logical: If TRUE, it will update NA values of all variables
 #'   in x with actual values of variables in y that have the same name as the
-#'   ones in x. If FALSE, NA values won't be updated.
+#'   ones in x. If FALSE, NA values won't be updated, even if `update_values` is
+#'   `TRUE`
 #' @param update_values logical: If TRUE, it will update all values of variables
 #'   in x with the actual of variables in y with the same name as the ones in x.
-#'   **NAs from y won't be used to update actual values in x**.
+#'   **NAs from y won't be used to update actual values in x**. Yet, by default,
+#'   NAs in x will be updated with values in y. To avoid this, make sure to set
+#'   `update_NAs = FALSE`
 #' @param verbose logical: if FALSE, it won't display any message (programmer's
 #'   option). Default is TRUE.
 #' @param keep_y_in_x logical: If TRUE, it will keep the original variable from
@@ -62,6 +65,11 @@ if (getRversion() >= '2.15.1')
 #'   the joined table.
 #' @param  sort logical: If TRUE, sort by key variables in `by`. Default is
 #'   TRUE.
+#' @param allow.cartesian logical: Check documentation in official [web
+#'   site](https://rdatatable.gitlab.io/data.table/reference/merge.html/).
+#'   Default is `NULL`, which implies that if the join is "1:1" it will be
+#'   `FALSE`, but if the join has any "m" on it, it will be converted to `TRUE`.
+#'   By specifying `TRUE` of `FALSE` you force the behavior of the join.
 #'
 #' @return a data.table joining x and y.
 #' @export
@@ -123,19 +131,20 @@ if (getRversion() >= '2.15.1')
 #'
 merge <- function(x,
                   y,
-                  by            = intersect(names(x), names(y)),
-                  yvars         = TRUE,
-                  match_type    = c("m:m", "m:1", "1:m", "1:1"),
-                  keep          = c("full", "left", "master",
+                  by              = intersect(names(x), names(y)),
+                  yvars           = TRUE,
+                  match_type      = c("m:m", "m:1", "1:m", "1:1"),
+                  keep            = c("full", "left", "master",
                                     "right", "using", "inner"),
-                  update_values = FALSE,
-                  update_NAs    = update_values,
-                  reportvar     = "report",
-                  reporttype    = c("character", "numeric"),
-                  roll          = NULL,
-                  keep_y_in_x   = FALSE,
-                  sort          = TRUE,
-                  verbose       = getOption("joyn.verbose")) {
+                  update_values   = FALSE,
+                  update_NAs      = update_values,
+                  reportvar       = "report",
+                  reporttype      = c("character", "numeric"),
+                  roll            = NULL,
+                  keep_y_in_x     = FALSE,
+                  sort            = TRUE,
+                  verbose         = getOption("joyn.verbose"),
+                  allow.cartesian = NULL) {
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #                   Initial parameters   ---------
@@ -216,7 +225,7 @@ merge <- function(x,
       match_type_error <- TRUE
       if (verbose) {
 
-        cli::cli_alert("table {.field x} is not uniquely identified
+        cli::cli_alert_danger("table {.field x} is not uniquely identified
                             by {.code {by}}", wrap = TRUE)
       }
     }
@@ -232,7 +241,7 @@ merge <- function(x,
 
       if (verbose) {
 
-      cli::cli_alert("table {.field y} is not uniquely identified
+      cli::cli_alert_danger("table {.field y} is not uniquely identified
                             by {.code {by}}", wrap = TRUE)
       }
     }
@@ -241,15 +250,15 @@ merge <- function(x,
 
   if(match_type_error) {
 
-      msg     <- "match type inconsistency"
-      hint    <- "you could use `return_report = TRUE` in `joyn::is_id()`
-      to see where the problem is"
-      rlang::abort(c(
-        msg,
-        i = hint
+    msg     <- "match type inconsistency"
+    hint    <- "you could use `return_report = TRUE` in `joyn::is_id()`
+    to see where the problem is"
+    rlang::abort(c(
+      msg,
+      i = hint
       ),
-      class = "joyn_error"
-      )
+     class = "joyn_error"
+     )
 
     }
 
@@ -352,35 +361,54 @@ merge <- function(x,
   i.yvars <- paste0("i.", yvars_w)
 
 
-  if (match_type %in% c("1:1", "m:1")) {
-
-    x[y,
-      on = by,
-      (yvars_w) := mget(i.yvars)]
-
-    # complement
-    if (keep %in% c("full", "both", "right", "using")) {
-      ty <- y[!x,
-              on   = by,
-              mult = "all"
-             ][, .SD,
-               .SDcols = c(by, yvars_w)
-              ]
-
-      x <- rbindlist(l         = list(x, ty),
-                     use.names = TRUE,
-                     fill      = TRUE)
+  # cartesian merge
+  if (is.null(allow.cartesian)) {
+    if (tx == "m" || ty == "m") {
+      allow.cartesian <- TRUE
+    } else {
+      allow.cartesian <- FALSE
     }
+  }
+
+  # keep relevant variables in y
+
+  y <- y[,
+         mget(c(by, yvars_w))]
+
+
+  if (keep == "inner") {
+
+    x <- data.table::merge.data.table(x               = x,
+                                      y               = y,
+                                      by              = by,
+                                      sort            = FALSE,
+                                      allow.cartesian = allow.cartesian)
+
+  } else if (keep %in% c("right", "using")) {
+
+    x <- data.table::merge.data.table(x               = x,
+                                      y               = y,
+                                      by              = by,
+                                      all.y           = TRUE,
+                                      sort            = FALSE,
+                                      allow.cartesian = allow.cartesian)
+
+  } else if (keep %in% c("left", "master")) {
+    x <- data.table::merge.data.table(x               = x,
+                                      y               = y,
+                                      by              = by,
+                                      all.x           = TRUE,
+                                      sort            = FALSE,
+                                      allow.cartesian = allow.cartesian)
 
   } else  {
 
     x <- data.table::merge.data.table(x               = x,
                                       y               = y,
                                       by              = by,
-                                      all.x           = TRUE,
-                                      all.y           = TRUE,
+                                      all             = TRUE,
                                       sort            = FALSE,
-                                      allow.cartesian = TRUE)
+                                      allow.cartesian = allow.cartesian)
 
   }
 
@@ -427,6 +455,21 @@ merge <- function(x,
   # report variable
   x[, (reportvar) :=  x_report + y_report]
 
+  ## rows to keep -----
+  if (keep  %in% c("master", "left") ) {
+
+    x <- x[get(reportvar)  != 2]
+
+  } else if (keep  %in% c("using", "right") ) {
+
+    x <- x[get(reportvar)  != 1]
+
+  } else if (keep  == "inner") {
+    x <- x[get(reportvar)  >= 3]
+  }
+
+
+
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #                   Update x   ---------
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -440,7 +483,7 @@ merge <- function(x,
 
     }
 
-    if (isTRUE(update_NAs) && isFALSE(update_values)) {
+    if (isTRUE(update_NAs)) {
 
       for (i in seq_along(upvars)) {
         update_NAs(x, upvars[i])
@@ -462,19 +505,6 @@ merge <- function(x,
   x[,
     c("x_report", "y_report") := NULL
   ]
-
-  ## rows to keep -----
-  if (keep  %in% c("master", "left") ) {
-
-    x <- x[get(reportvar)  != 2]
-
-  } else if (keep  %in% c("using", "right") ) {
-
-    x <- x[get(reportvar)  != 1]
-
-  } else if (keep  == "inner") {
-    x <- x[get(reportvar)  >= 3]
-  }
 
 
   ## Rename by variables -----
