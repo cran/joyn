@@ -1,3 +1,4 @@
+withr::local_options(joyn.verbose = FALSE)
 library(data.table)
 # options(possible_ids.verbose = FALSE)
 x1 = data.table(id = c(1L, 1L, 2L, 3L, NA_integer_),
@@ -67,7 +68,7 @@ test_that("exclude and include", {
 })
 
 
-test_that("get NULL when ducplicates", {
+test_that("get NULL when duplicates", {
 
   expect_null(possible_ids(x1,
                            exclude = "_numeric",
@@ -108,7 +109,7 @@ test_that("Exclude more than one variable", {
 })
 
 
-test_that("dplicated names", {
+test_that("duplicated names", {
   xx4 <- copy(x4)
   setnames(xx4, "t", "x")
 

@@ -1,4 +1,6 @@
-library(data.table)
+withr::local_options(joyn.verbose = FALSE)
+library(data.table) |>
+  suppressWarnings()
 x1 = data.table(id = c(1L, 1L, 2L, 3L, NA_integer_),
                 t  = c(1L, 2L, 1L, 2L, NA_integer_),
                 x  = 11:15)
@@ -40,6 +42,12 @@ y4 = data.table(id  = c(1, 2, 5, 6, 3),
 #                   overwrite = TRUE,
 #                   internal = TRUE)
 
+test_that("correct inputs", {
+  x <- "not a data.table/data.frame"
+
+  freq_table(x) |>
+    expect_error()
+})
 
 test_that("correct frequencies", {
 
