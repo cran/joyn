@@ -71,13 +71,13 @@ is_balanced(df = x1,
 # Tabulating frequencies of var `id`
 
 freq_table(x     = x1, 
-           byvar = "id")
+           byvar = "id")[]
 
 # Removing NAs from the calculation
 
 freq_table(x     = x1, 
            byvar = "id", 
-           na.rm = TRUE)
+           na.rm = TRUE)[]
 
 
 

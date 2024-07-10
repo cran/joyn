@@ -426,94 +426,88 @@ a another one.</p>
 <span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   28.6%</span></span>
-<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3   42.9%</span></span>
-<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a><span class="co">#&gt; 3:      y     2   28.6%</span></span>
-<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a><span class="co">#&gt; 4:  total     7    100%</span></span>
-<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a><span class="co">#&gt;       id     t     x  .joyn</span></span>
-<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;char&gt;</span></span>
-<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15      x</span></span>
-<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    16  x &amp; y</span></span>
-<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA  x &amp; y</span></span>
-<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA  x &amp; y</span></span>
-<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a><span class="co">#&gt; 5:     4     2    12      x</span></span>
-<span id="cb3-61"><a href="#cb3-61" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA      y</span></span>
-<span id="cb3-62"><a href="#cb3-62" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA      y</span></span>
-<span id="cb3-63"><a href="#cb3-63" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" tabindex="-1"></a><span class="co"># Printing the info message</span></span>
-<span id="cb3-65"><a href="#cb3-65" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
-<span id="cb3-66"><a href="#cb3-66" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb3-67"><a href="#cb3-67" tabindex="-1"></a></span>
-<span id="cb3-68"><a href="#cb3-68" tabindex="-1"></a><span class="co"># ---------------- Info about change in reporting variable name ----------------</span></span>
-<span id="cb3-69"><a href="#cb3-69" tabindex="-1"></a><span class="fu">joyn</span>(<span class="at">x              =</span> x2,</span>
-<span id="cb3-70"><a href="#cb3-70" tabindex="-1"></a>     <span class="at">y              =</span> y2,</span>
-<span id="cb3-71"><a href="#cb3-71" tabindex="-1"></a>     <span class="at">by             =</span> <span class="st">&quot;id&quot;</span>, </span>
-<span id="cb3-72"><a href="#cb3-72" tabindex="-1"></a>     <span class="at">reportvar      =</span> <span class="st">&quot;x&quot;</span>,</span>
-<span id="cb3-73"><a href="#cb3-73" tabindex="-1"></a>     <span class="at">y_vars_to_keep =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a><span class="co">#&gt; 1     x 2   28.6%</span></span>
+<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a><span class="co">#&gt; 2     y 2   28.6%</span></span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3   42.9%</span></span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a><span class="co">#&gt; 4 total 7    100%</span></span>
+<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="co">#&gt;       id     t     x  .joyn</span></span>
+<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;fctr&gt;</span></span>
+<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    16  x &amp; y</span></span>
+<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a><span class="co">#&gt; 2:     4     2    12      x</span></span>
+<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA  x &amp; y</span></span>
+<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA  x &amp; y</span></span>
+<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15      x</span></span>
+<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA      y</span></span>
+<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA      y</span></span>
+<span id="cb3-61"><a href="#cb3-61" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="#cb3-62" tabindex="-1"></a><span class="co"># Printing the info message</span></span>
+<span id="cb3-63"><a href="#cb3-63" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
+<span id="cb3-64"><a href="#cb3-64" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb3-65"><a href="#cb3-65" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" tabindex="-1"></a><span class="co"># ---------------- Info about change in reporting variable name ----------------</span></span>
+<span id="cb3-67"><a href="#cb3-67" tabindex="-1"></a><span class="fu">joyn</span>(<span class="at">x              =</span> x2,</span>
+<span id="cb3-68"><a href="#cb3-68" tabindex="-1"></a>     <span class="at">y              =</span> y2,</span>
+<span id="cb3-69"><a href="#cb3-69" tabindex="-1"></a>     <span class="at">by             =</span> <span class="st">&quot;id&quot;</span>, </span>
+<span id="cb3-70"><a href="#cb3-70" tabindex="-1"></a>     <span class="at">reportvar      =</span> <span class="st">&quot;x&quot;</span>,</span>
+<span id="cb3-71"><a href="#cb3-71" tabindex="-1"></a>     <span class="at">y_vars_to_keep =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-72"><a href="#cb3-72" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb3-73"><a href="#cb3-73" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb3-74"><a href="#cb3-74" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-75"><a href="#cb3-75" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
-<span id="cb3-76"><a href="#cb3-76" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-77"><a href="#cb3-77" tabindex="-1"></a><span class="co">#&gt;       x.1     n percent</span></span>
-<span id="cb3-78"><a href="#cb3-78" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb3-79"><a href="#cb3-79" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   28.6%</span></span>
-<span id="cb3-80"><a href="#cb3-80" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3   42.9%</span></span>
-<span id="cb3-81"><a href="#cb3-81" tabindex="-1"></a><span class="co">#&gt; 3:      y     2   28.6%</span></span>
-<span id="cb3-82"><a href="#cb3-82" tabindex="-1"></a><span class="co">#&gt; 4:  total     7    100%</span></span>
-<span id="cb3-83"><a href="#cb3-83" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb3-84"><a href="#cb3-84" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable x</span></span>
-<span id="cb3-85"><a href="#cb3-85" tabindex="-1"></a><span class="co">#&gt; ℹ Note: reportvar x is already part of the resulting table. It will be changed</span></span>
-<span id="cb3-86"><a href="#cb3-86" tabindex="-1"></a><span class="co">#&gt; to x.1</span></span>
-<span id="cb3-87"><a href="#cb3-87" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb3-88"><a href="#cb3-88" tabindex="-1"></a><span class="co">#&gt;       id     t     x    x.1</span></span>
-<span id="cb3-89"><a href="#cb3-89" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;char&gt;</span></span>
-<span id="cb3-90"><a href="#cb3-90" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15      x</span></span>
-<span id="cb3-91"><a href="#cb3-91" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    16  x &amp; y</span></span>
-<span id="cb3-92"><a href="#cb3-92" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA  x &amp; y</span></span>
-<span id="cb3-93"><a href="#cb3-93" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA  x &amp; y</span></span>
-<span id="cb3-94"><a href="#cb3-94" tabindex="-1"></a><span class="co">#&gt; 5:     4     2    12      x</span></span>
-<span id="cb3-95"><a href="#cb3-95" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA      y</span></span>
-<span id="cb3-96"><a href="#cb3-96" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA      y</span></span>
-<span id="cb3-97"><a href="#cb3-97" tabindex="-1"></a></span>
-<span id="cb3-98"><a href="#cb3-98" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
-<span id="cb3-99"><a href="#cb3-99" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable x</span></span>
-<span id="cb3-100"><a href="#cb3-100" tabindex="-1"></a><span class="co">#&gt; ℹ Note: reportvar x is already part of the resulting table. It will be changed</span></span>
-<span id="cb3-101"><a href="#cb3-101" tabindex="-1"></a><span class="co">#&gt; to x.1</span></span>
-<span id="cb3-102"><a href="#cb3-102" tabindex="-1"></a></span>
-<span id="cb3-103"><a href="#cb3-103" tabindex="-1"></a><span class="co"># ------------- Informing that reporting variable is not returned -------------</span></span>
-<span id="cb3-104"><a href="#cb3-104" tabindex="-1"></a><span class="fu">joyn</span>(<span class="at">x              =</span> x2,</span>
-<span id="cb3-105"><a href="#cb3-105" tabindex="-1"></a>     <span class="at">y              =</span> y2,</span>
-<span id="cb3-106"><a href="#cb3-106" tabindex="-1"></a>     <span class="at">by             =</span> <span class="st">&quot;id&quot;</span>, </span>
-<span id="cb3-107"><a href="#cb3-107" tabindex="-1"></a>     <span class="at">reportvar      =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb3-108"><a href="#cb3-108" tabindex="-1"></a>     <span class="at">y_vars_to_keep =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-109"><a href="#cb3-109" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-110"><a href="#cb3-110" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
-<span id="cb3-111"><a href="#cb3-111" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-112"><a href="#cb3-112" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb3-113"><a href="#cb3-113" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb3-114"><a href="#cb3-114" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   28.6%</span></span>
-<span id="cb3-115"><a href="#cb3-115" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3   42.9%</span></span>
-<span id="cb3-116"><a href="#cb3-116" tabindex="-1"></a><span class="co">#&gt; 3:      y     2   28.6%</span></span>
-<span id="cb3-117"><a href="#cb3-117" tabindex="-1"></a><span class="co">#&gt; 4:  total     7    100%</span></span>
-<span id="cb3-118"><a href="#cb3-118" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb3-119"><a href="#cb3-119" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Reporting variable is not returned</span></span>
-<span id="cb3-120"><a href="#cb3-120" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb3-121"><a href="#cb3-121" tabindex="-1"></a><span class="co">#&gt;       id     t     x</span></span>
-<span id="cb3-122"><a href="#cb3-122" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt;</span></span>
-<span id="cb3-123"><a href="#cb3-123" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15</span></span>
-<span id="cb3-124"><a href="#cb3-124" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    16</span></span>
-<span id="cb3-125"><a href="#cb3-125" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA</span></span>
-<span id="cb3-126"><a href="#cb3-126" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA</span></span>
-<span id="cb3-127"><a href="#cb3-127" tabindex="-1"></a><span class="co">#&gt; 5:     4     2    12</span></span>
-<span id="cb3-128"><a href="#cb3-128" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA</span></span>
-<span id="cb3-129"><a href="#cb3-129" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA</span></span>
-<span id="cb3-130"><a href="#cb3-130" tabindex="-1"></a></span>
-<span id="cb3-131"><a href="#cb3-131" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
-<span id="cb3-132"><a href="#cb3-132" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Reporting variable is not returned</span></span></code></pre></div>
+<span id="cb3-75"><a href="#cb3-75" tabindex="-1"></a><span class="co">#&gt;     x.1 n percent</span></span>
+<span id="cb3-76"><a href="#cb3-76" tabindex="-1"></a><span class="co">#&gt; 1     x 2   28.6%</span></span>
+<span id="cb3-77"><a href="#cb3-77" tabindex="-1"></a><span class="co">#&gt; 2     y 2   28.6%</span></span>
+<span id="cb3-78"><a href="#cb3-78" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3   42.9%</span></span>
+<span id="cb3-79"><a href="#cb3-79" tabindex="-1"></a><span class="co">#&gt; 4 total 7    100%</span></span>
+<span id="cb3-80"><a href="#cb3-80" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb3-81"><a href="#cb3-81" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable x</span></span>
+<span id="cb3-82"><a href="#cb3-82" tabindex="-1"></a><span class="co">#&gt; ℹ Note: reportvar x is already part of the resulting table. It will be changed</span></span>
+<span id="cb3-83"><a href="#cb3-83" tabindex="-1"></a><span class="co">#&gt; to x.1</span></span>
+<span id="cb3-84"><a href="#cb3-84" tabindex="-1"></a><span class="co">#&gt;       id     t     x    x.1</span></span>
+<span id="cb3-85"><a href="#cb3-85" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;fctr&gt;</span></span>
+<span id="cb3-86"><a href="#cb3-86" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    16  x &amp; y</span></span>
+<span id="cb3-87"><a href="#cb3-87" tabindex="-1"></a><span class="co">#&gt; 2:     4     2    12      x</span></span>
+<span id="cb3-88"><a href="#cb3-88" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA  x &amp; y</span></span>
+<span id="cb3-89"><a href="#cb3-89" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA  x &amp; y</span></span>
+<span id="cb3-90"><a href="#cb3-90" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15      x</span></span>
+<span id="cb3-91"><a href="#cb3-91" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA      y</span></span>
+<span id="cb3-92"><a href="#cb3-92" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA      y</span></span>
+<span id="cb3-93"><a href="#cb3-93" tabindex="-1"></a></span>
+<span id="cb3-94"><a href="#cb3-94" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
+<span id="cb3-95"><a href="#cb3-95" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable x</span></span>
+<span id="cb3-96"><a href="#cb3-96" tabindex="-1"></a><span class="co">#&gt; ℹ Note: reportvar x is already part of the resulting table. It will be changed</span></span>
+<span id="cb3-97"><a href="#cb3-97" tabindex="-1"></a><span class="co">#&gt; to x.1</span></span>
+<span id="cb3-98"><a href="#cb3-98" tabindex="-1"></a></span>
+<span id="cb3-99"><a href="#cb3-99" tabindex="-1"></a><span class="co"># ------------- Informing that reporting variable is not returned -------------</span></span>
+<span id="cb3-100"><a href="#cb3-100" tabindex="-1"></a><span class="fu">joyn</span>(<span class="at">x              =</span> x2,</span>
+<span id="cb3-101"><a href="#cb3-101" tabindex="-1"></a>     <span class="at">y              =</span> y2,</span>
+<span id="cb3-102"><a href="#cb3-102" tabindex="-1"></a>     <span class="at">by             =</span> <span class="st">&quot;id&quot;</span>, </span>
+<span id="cb3-103"><a href="#cb3-103" tabindex="-1"></a>     <span class="at">reportvar      =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-104"><a href="#cb3-104" tabindex="-1"></a>     <span class="at">y_vars_to_keep =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-105"><a href="#cb3-105" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb3-106"><a href="#cb3-106" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
+<span id="cb3-107"><a href="#cb3-107" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb3-108"><a href="#cb3-108" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb3-109"><a href="#cb3-109" tabindex="-1"></a><span class="co">#&gt; 1     x 2   28.6%</span></span>
+<span id="cb3-110"><a href="#cb3-110" tabindex="-1"></a><span class="co">#&gt; 2     y 2   28.6%</span></span>
+<span id="cb3-111"><a href="#cb3-111" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3   42.9%</span></span>
+<span id="cb3-112"><a href="#cb3-112" tabindex="-1"></a><span class="co">#&gt; 4 total 7    100%</span></span>
+<span id="cb3-113"><a href="#cb3-113" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb3-114"><a href="#cb3-114" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Reporting variable is NOT returned</span></span>
+<span id="cb3-115"><a href="#cb3-115" tabindex="-1"></a><span class="co">#&gt;       id     t     x</span></span>
+<span id="cb3-116"><a href="#cb3-116" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt;</span></span>
+<span id="cb3-117"><a href="#cb3-117" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    16</span></span>
+<span id="cb3-118"><a href="#cb3-118" tabindex="-1"></a><span class="co">#&gt; 2:     4     2    12</span></span>
+<span id="cb3-119"><a href="#cb3-119" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA</span></span>
+<span id="cb3-120"><a href="#cb3-120" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA</span></span>
+<span id="cb3-121"><a href="#cb3-121" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15</span></span>
+<span id="cb3-122"><a href="#cb3-122" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA</span></span>
+<span id="cb3-123"><a href="#cb3-123" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA</span></span>
+<span id="cb3-124"><a href="#cb3-124" tabindex="-1"></a></span>
+<span id="cb3-125"><a href="#cb3-125" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
+<span id="cb3-126"><a href="#cb3-126" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Reporting variable is NOT returned</span></span></code></pre></div>
 <p>Furthermore, info messages will help you keep track of which
 <strong>variables</strong> <strong>in <code>y</code> will be kept after
 the merging</strong>, for example notifying you if any of the y
@@ -527,29 +521,27 @@ part of the <code>by</code> variables.</p>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   28.6%</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3   42.9%</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 3:      y     2   28.6%</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 4:  total     7    100%</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id, yd, y, and x</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;char&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA    NA      x</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    16     1    11  x &amp; y</span></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 5:     4     2    12    NA    NA      x</span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id, yd, y, and x</span></span></code></pre></div>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; 1     x 2   28.6%</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; 2     y 2   28.6%</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3   42.9%</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 4 total 7    100%</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id, yd, y, and x</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;fctr&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    16     1    11  x &amp; y</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; 2:     4     2    12    NA    NA      x</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA    NA      x</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id, yd, y, and x</span></span></code></pre></div>
 </div>
 <div id="timing-messages" class="section level3">
 <h3>Timing messages 🔵</h3>
@@ -587,59 +579,56 @@ checks</em></li>
 <span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   33.3%</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3     50%</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 3:      y     1   16.7%</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; 4:  total     6    100%</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id and y</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;char&gt;</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA      x</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    11    11  x &amp; y</span></span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co">#&gt; 3:     1     2    12    11  x &amp; y</span></span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co">#&gt; 4:     2     1    13    15  x &amp; y</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="co">#&gt; 5:     3     2    14    NA      x</span></span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="co">#&gt; 6:     4    NA    NA    16      y</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;timing&quot;</span>)</span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="co">#&gt; ● Timing: The full joyn is executed in 0.000109 seconds</span></span>
-<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a><span class="co">#&gt; ● Timing: The entire joyn function, including checks, is executed in 0.029893</span></span>
-<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a><span class="co">#&gt; seconds</span></span>
-<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a><span class="co"># --------------------------- Example with left join ---------------------------</span></span>
-<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a><span class="fu">left_join</span>(<span class="at">x            =</span> x1, </span>
-<span id="cb5-37"><a href="#cb5-37" tabindex="-1"></a>          <span class="at">y            =</span> y1, </span>
-<span id="cb5-38"><a href="#cb5-38" tabindex="-1"></a>          <span class="at">relationship =</span> <span class="st">&quot;many-to-one&quot;</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt; 1     x 2   33.3%</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt; 2     y 1   16.7%</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3     50%</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 4 total 6    100%</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id and y</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;fctr&gt;</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    11    11  x &amp; y</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt; 2:     1     2    12    11  x &amp; y</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    13    15  x &amp; y</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    14    NA      x</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA      x</span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co">#&gt; 6:     4    NA    NA    16      y</span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;timing&quot;</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="co">#&gt; ● Timing:The full joyn is executed in 0.000233 seconds.</span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="co">#&gt; ● Timing: The entire joyn function, including checks, is executed in 0.022699</span></span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="co">#&gt; seconds.</span></span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a><span class="co"># --------------------------- Example with left join ---------------------------</span></span>
+<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a><span class="fu">left_join</span>(<span class="at">x            =</span> x1, </span>
+<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a>          <span class="at">y            =</span> y1, </span>
+<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a>          <span class="at">relationship =</span> <span class="st">&quot;many-to-one&quot;</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-38"><a href="#cb5-38" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb5-39"><a href="#cb5-39" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb5-40"><a href="#cb5-40" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
-<span id="cb5-41"><a href="#cb5-41" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb5-42"><a href="#cb5-42" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb5-43"><a href="#cb5-43" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb5-44"><a href="#cb5-44" tabindex="-1"></a><span class="co">#&gt; 1:      x     2     40%</span></span>
-<span id="cb5-45"><a href="#cb5-45" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3     60%</span></span>
-<span id="cb5-46"><a href="#cb5-46" tabindex="-1"></a><span class="co">#&gt; 3:  total     5    100%</span></span>
-<span id="cb5-47"><a href="#cb5-47" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb5-48"><a href="#cb5-48" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb5-49"><a href="#cb5-49" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id and y</span></span>
-<span id="cb5-50"><a href="#cb5-50" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb5-51"><a href="#cb5-51" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
-<span id="cb5-52"><a href="#cb5-52" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;char&gt;</span></span>
-<span id="cb5-53"><a href="#cb5-53" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA      x</span></span>
-<span id="cb5-54"><a href="#cb5-54" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    11    11  x &amp; y</span></span>
-<span id="cb5-55"><a href="#cb5-55" tabindex="-1"></a><span class="co">#&gt; 3:     1     2    12    11  x &amp; y</span></span>
-<span id="cb5-56"><a href="#cb5-56" tabindex="-1"></a><span class="co">#&gt; 4:     2     1    13    15  x &amp; y</span></span>
-<span id="cb5-57"><a href="#cb5-57" tabindex="-1"></a><span class="co">#&gt; 5:     3     2    14    NA      x</span></span>
-<span id="cb5-58"><a href="#cb5-58" tabindex="-1"></a></span>
-<span id="cb5-59"><a href="#cb5-59" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;timing&quot;</span>)</span>
-<span id="cb5-60"><a href="#cb5-60" tabindex="-1"></a><span class="co">#&gt; ● Timing: The full joyn is executed in 9.1e-05 seconds</span></span>
-<span id="cb5-61"><a href="#cb5-61" tabindex="-1"></a><span class="co">#&gt; ● Timing: The entire joyn function, including checks, is executed in 0.027749</span></span>
-<span id="cb5-62"><a href="#cb5-62" tabindex="-1"></a><span class="co">#&gt; seconds</span></span></code></pre></div>
+<span id="cb5-40"><a href="#cb5-40" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb5-41"><a href="#cb5-41" tabindex="-1"></a><span class="co">#&gt; 1     x 2     40%</span></span>
+<span id="cb5-42"><a href="#cb5-42" tabindex="-1"></a><span class="co">#&gt; 2     y 1     20%</span></span>
+<span id="cb5-43"><a href="#cb5-43" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 2     40%</span></span>
+<span id="cb5-44"><a href="#cb5-44" tabindex="-1"></a><span class="co">#&gt; 4 total 5    100%</span></span>
+<span id="cb5-45"><a href="#cb5-45" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb5-46"><a href="#cb5-46" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb5-47"><a href="#cb5-47" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id and y</span></span>
+<span id="cb5-48"><a href="#cb5-48" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
+<span id="cb5-49"><a href="#cb5-49" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;fctr&gt;</span></span>
+<span id="cb5-50"><a href="#cb5-50" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    11    11  x &amp; y</span></span>
+<span id="cb5-51"><a href="#cb5-51" tabindex="-1"></a><span class="co">#&gt; 2:     1     2    12    11  x &amp; y</span></span>
+<span id="cb5-52"><a href="#cb5-52" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    13    15  x &amp; y</span></span>
+<span id="cb5-53"><a href="#cb5-53" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    14    NA      x</span></span>
+<span id="cb5-54"><a href="#cb5-54" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA      x</span></span>
+<span id="cb5-55"><a href="#cb5-55" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;timing&quot;</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" tabindex="-1"></a><span class="co">#&gt; ● Timing:The full joyn is executed in 0.000248 seconds.</span></span>
+<span id="cb5-58"><a href="#cb5-58" tabindex="-1"></a><span class="co">#&gt; ● Timing: The entire joyn function, including checks, is executed in 0.021936</span></span>
+<span id="cb5-59"><a href="#cb5-59" tabindex="-1"></a><span class="co">#&gt; seconds.</span></span></code></pre></div>
 </div>
 <div id="warning-messages" class="section level3">
 <h3>Warning messages ⚠️</h3>
@@ -661,30 +650,28 @@ a “one to many” relationship instead. The user will be alerted and a
 <span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   28.6%</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3   42.9%</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; 3:      y     2   28.6%</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; 4:  total     7    100%</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id, yd, y, and x</span></span>
-<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify y therefore a 1:1 join is</span></span>
-<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">#&gt; executed.</span></span>
-<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
-<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;char&gt;</span></span>
-<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA    NA      x</span></span>
-<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    16     1    11  x &amp; y</span></span>
-<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
-<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
-<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a><span class="co">#&gt; 5:     4     2    12    NA    NA      x</span></span>
-<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
-<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
-<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
-<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify y therefore a 1:1 join is</span></span>
-<span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a><span class="co">#&gt; executed.</span></span></code></pre></div>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt; 1     x 2   28.6%</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; 2     y 2   28.6%</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3   42.9%</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; 4 total 7    100%</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id, yd, y, and x</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify y, therefore a 1:1 join is</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; executed</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;fctr&gt;</span></span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    16     1    11  x &amp; y</span></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="co">#&gt; 2:     4     2    12    NA    NA      x</span></span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA    NA      x</span></span>
+<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify y, therefore a 1:1 join is</span></span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a><span class="co">#&gt; executed</span></span></code></pre></div>
 <p>In a similar way, warning messages are generated when choosing
 <code>match_type = &quot;m:m&quot; or &quot;m:1&quot;</code></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a></span>
@@ -694,61 +681,57 @@ a “one to many” relationship instead. The user will be alerted and a
 <span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   28.6%</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3   42.9%</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; 3:      y     2   28.6%</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; 4:  total     7    100%</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id, yd, y, and x</span></span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify both x and y therefore a 1:1</span></span>
-<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt; join is executed.</span></span>
-<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
-<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;char&gt;</span></span>
-<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA    NA      x</span></span>
-<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    16     1    11  x &amp; y</span></span>
-<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
-<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
-<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="co">#&gt; 5:     4     2    12    NA    NA      x</span></span>
-<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
-<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
-<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
-<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify both x and y therefore a 1:1</span></span>
-<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a><span class="co">#&gt; join is executed.</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; 1     x 2   28.6%</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; 2     y 2   28.6%</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3   42.9%</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; 4 total 7    100%</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id, yd, y, and x</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify both x and y, therefore a 1:1</span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; join is executed</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;fctr&gt;</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    16     1    11  x &amp; y</span></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co">#&gt; 2:     4     2    12    NA    NA      x</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA    NA      x</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify both x and y, therefore a 1:1</span></span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a><span class="co">#&gt; join is executed</span></span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a><span class="co"># ------------------ Warning that &quot;id&quot; uniquely identifies x2 ------------------</span></span>
 <span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a></span>
-<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a><span class="co"># ------------------ Warning that &quot;id&quot; uniquely identifies x2 ------------------</span></span>
-<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a></span>
-<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="fu">joyn</span>(x2, y2, <span class="at">by =</span> <span class="st">&quot;id&quot;</span>, <span class="at">match_type =</span> <span class="st">&quot;m:1&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a><span class="fu">joyn</span>(x2, y2, <span class="at">by =</span> <span class="st">&quot;id&quot;</span>, <span class="at">match_type =</span> <span class="st">&quot;m:1&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
-<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   28.6%</span></span>
-<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3   42.9%</span></span>
-<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="co">#&gt; 3:      y     2   28.6%</span></span>
-<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a><span class="co">#&gt; 4:  total     7    100%</span></span>
-<span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id, yd, y, and x</span></span>
-<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify x therefore a 1:1 join is</span></span>
-<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a><span class="co">#&gt; executed.</span></span>
-<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb7-51"><a href="#cb7-51" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
-<span id="cb7-52"><a href="#cb7-52" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;char&gt;</span></span>
-<span id="cb7-53"><a href="#cb7-53" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA    NA      x</span></span>
-<span id="cb7-54"><a href="#cb7-54" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    16     1    11  x &amp; y</span></span>
-<span id="cb7-55"><a href="#cb7-55" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
-<span id="cb7-56"><a href="#cb7-56" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
-<span id="cb7-57"><a href="#cb7-57" tabindex="-1"></a><span class="co">#&gt; 5:     4     2    12    NA    NA      x</span></span>
-<span id="cb7-58"><a href="#cb7-58" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
-<span id="cb7-59"><a href="#cb7-59" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
-<span id="cb7-60"><a href="#cb7-60" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
-<span id="cb7-61"><a href="#cb7-61" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify x therefore a 1:1 join is</span></span>
-<span id="cb7-62"><a href="#cb7-62" tabindex="-1"></a><span class="co">#&gt; executed.</span></span></code></pre></div>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">#&gt; 1     x 2   28.6%</span></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co">#&gt; 2     y 2   28.6%</span></span>
+<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3   42.9%</span></span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="co">#&gt; 4 total 7    100%</span></span>
+<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id, yd, y, and x</span></span>
+<span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify x, therefore a 1:1 join is</span></span>
+<span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a><span class="co">#&gt; executed</span></span>
+<span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a><span class="co">#&gt;       id     t     x    yd     y  .joyn</span></span>
+<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;num&gt; &lt;num&gt; &lt;int&gt; &lt;fctr&gt;</span></span>
+<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    16     1    11  x &amp; y</span></span>
+<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a><span class="co">#&gt; 2:     4     2    12    NA    NA      x</span></span>
+<span id="cb7-51"><a href="#cb7-51" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    NA     2    15  x &amp; y</span></span>
+<span id="cb7-52"><a href="#cb7-52" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    NA     3    10  x &amp; y</span></span>
+<span id="cb7-53"><a href="#cb7-53" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA    NA      x</span></span>
+<span id="cb7-54"><a href="#cb7-54" tabindex="-1"></a><span class="co">#&gt; 6:     5    NA    NA     5    20      y</span></span>
+<span id="cb7-55"><a href="#cb7-55" tabindex="-1"></a><span class="co">#&gt; 7:     6    NA    NA     6    13      y</span></span>
+<span id="cb7-56"><a href="#cb7-56" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
+<span id="cb7-57"><a href="#cb7-57" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: The keys supplied uniquely identify x, therefore a 1:1 join is</span></span>
+<span id="cb7-58"><a href="#cb7-58" tabindex="-1"></a><span class="co">#&gt; executed</span></span></code></pre></div>
 <p>Other examples of warnings are those that arise when you are trying
 to supply certain arguments to the merging functions that are not yet
 supported by the current version of <code>joyn</code>.</p>
@@ -768,30 +751,29 @@ will make the join retain only keys in <code>x</code>.</p>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 1:      x     2     40%</span></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3     60%</span></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 3:  total     5    100%</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; 1     x 2     40%</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 2     y 1     20%</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 2     40%</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 4 total 5    100%</span></span>
 <span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id and y</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id and y</span></span>
 <span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: joyn does not currently allow inequality joins, so keep = NULL will</span></span>
 <span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; retain only keys in x</span></span>
 <span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: Currently, joyn allows only na_matches = &#39;na&#39;</span></span>
-<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
-<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;char&gt;</span></span>
-<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA      x</span></span>
-<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    11    11  x &amp; y</span></span>
-<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">#&gt; 3:     1     2    12    11  x &amp; y</span></span>
-<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="co">#&gt; 4:     2     1    13    15  x &amp; y</span></span>
-<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="co">#&gt; 5:     3     2    14    NA      x</span></span>
-<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a></span>
-<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
-<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: joyn does not currently allow inequality joins, so keep = NULL will</span></span>
-<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="co">#&gt; retain only keys in x</span></span>
-<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: Currently, joyn allows only na_matches = &#39;na&#39;</span></span></code></pre></div>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;fctr&gt;</span></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    11    11  x &amp; y</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="co">#&gt; 2:     1     2    12    11  x &amp; y</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    13    15  x &amp; y</span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    14    NA      x</span></span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA      x</span></span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;warn&quot;</span>)</span>
+<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: joyn does not currently allow inequality joins, so keep = NULL will</span></span>
+<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="co">#&gt; retain only keys in x</span></span>
+<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="co">#&gt; ⚠ Warning: Currently, joyn allows only na_matches = &#39;na&#39;</span></span></code></pre></div>
 </div>
 <div id="error-messages" class="section level3">
 <h3>Error messages ❌</h3>
@@ -828,13 +810,13 @@ names.</p>
 <span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>                          <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="fu">joyn</span>(<span class="at">x =</span> x_duplicates,</span>
 <span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>     <span class="at">y =</span> y1)</span>
-<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a><span class="co">#&gt; ✖ Error: Table x has the following column duplicated:`x` Please rename or</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a><span class="co">#&gt; ✖ Error: Table x has the following column duplicated: x.  Please rename or</span></span>
 <span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a><span class="co">#&gt; remove and try again.</span></span>
 <span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a><span class="co">#&gt; Error in `check_xy()`:</span></span>
 <span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a><span class="co">#&gt; ! wrong input specification</span></span>
 <span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a></span>
 <span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;err&quot;</span>)</span>
-<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a><span class="co">#&gt; ✖ Error: Table x has the following column duplicated:`x` Please rename or</span></span>
+<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a><span class="co">#&gt; ✖ Error: Table x has the following column duplicated: x.  Please rename or</span></span>
 <span id="cb9-30"><a href="#cb9-30" tabindex="-1"></a><span class="co">#&gt; remove and try again.</span></span></code></pre></div>
 <p>Furthermore, errors messages are generated when choosing the wrong
 <code>match_type</code>, that is not consistent with the actual
@@ -843,12 +825,16 @@ relationship between the variables being used for merging.
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a></span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">joyn</span>(<span class="at">x =</span> x1, <span class="at">y=</span>y1, <span class="at">by=</span><span class="st">&quot;id&quot;</span>, <span class="at">match_type =</span> <span class="st">&quot;1:1&quot;</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt; ✖ Error: table x is not uniquely identified by id</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; Error in `check_match_type()`:</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; ! match type inconsistency</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; ℹ you could use `return_report = TRUE` in `joyn::is_id()` to see where the</span></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt;   problem is</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;err&quot;</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; ✖ Error: table x is not uniquely identified by id</span></span></code></pre></div>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; Duplicate counts in x:</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt;       id copies</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt;    &lt;int&gt;  &lt;int&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; 1:     1      2</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; Error in `check_match_type()`:</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; ! match type inconsistency</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; ℹ refer to the duplicate counts in the table(s) above to identify where the</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt;   issue occurred</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="st">&quot;err&quot;</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; ✖ Error: table x is not uniquely identified by id</span></span></code></pre></div>
 </div>
 </div>
 <div id="additional-how-to-visualize-joyn-messages" class="section level2">
@@ -868,37 +854,35 @@ of them to be displayed, you can just set <code>type = &#39;all&#39;</code></p>
 <span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co">#&gt; ── JOYn Report ──</span></span>
 <span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co">#&gt;     .joyn     n percent</span></span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="co">#&gt;    &lt;char&gt; &lt;int&gt;  &lt;char&gt;</span></span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a><span class="co">#&gt; 1:      x     2   33.3%</span></span>
-<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="co">#&gt; 2:  x &amp; y     3     50%</span></span>
-<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a><span class="co">#&gt; 3:      y     1   16.7%</span></span>
-<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="co">#&gt; 4:  total     6    100%</span></span>
-<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
-<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id and y</span></span>
-<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a><span class="co">#&gt; Key: &lt;id&gt;</span></span>
-<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
-<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;char&gt;</span></span>
-<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a><span class="co">#&gt; 1:    NA    NA    15    NA      x</span></span>
-<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a><span class="co">#&gt; 2:     1     1    11    11  x &amp; y</span></span>
-<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a><span class="co">#&gt; 3:     1     2    12    11  x &amp; y</span></span>
-<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a><span class="co">#&gt; 4:     2     1    13    15  x &amp; y</span></span>
-<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a><span class="co">#&gt; 5:     3     2    14    NA      x</span></span>
-<span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a><span class="co">#&gt; 6:     4    NA    NA    16      y</span></span>
-<span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a></span>
-<span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a><span class="co"># Print all messages stored</span></span>
-<span id="cb11-30"><a href="#cb11-30" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;all&quot;</span>)</span>
-<span id="cb11-31"><a href="#cb11-31" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb11-32"><a href="#cb11-32" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id and y</span></span>
-<span id="cb11-33"><a href="#cb11-33" tabindex="-1"></a><span class="co">#&gt; ● Timing: The full joyn is executed in 9.5e-05 seconds</span></span>
-<span id="cb11-34"><a href="#cb11-34" tabindex="-1"></a><span class="co">#&gt; ● Timing: The entire joyn function, including checks, is executed in 0.02768</span></span>
-<span id="cb11-35"><a href="#cb11-35" tabindex="-1"></a><span class="co">#&gt; seconds</span></span>
-<span id="cb11-36"><a href="#cb11-36" tabindex="-1"></a></span>
-<span id="cb11-37"><a href="#cb11-37" tabindex="-1"></a><span class="co"># Print info messages only </span></span>
-<span id="cb11-38"><a href="#cb11-38" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
-<span id="cb11-39"><a href="#cb11-39" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Joyn&#39;s report available in variable .joyn</span></span>
-<span id="cb11-40"><a href="#cb11-40" tabindex="-1"></a><span class="co">#&gt; ℹ ❯ Removing key variables id from id and y</span></span></code></pre></div>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co">#&gt;   .joyn n percent</span></span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="co">#&gt; 1     x 2   33.3%</span></span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a><span class="co">#&gt; 2     y 1   16.7%</span></span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="co">#&gt; 3 x &amp; y 3     50%</span></span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a><span class="co">#&gt; 4 total 6    100%</span></span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="co">#&gt; ────────────────────────────────────────────────────────── End of JOYn report ──</span></span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id and y</span></span>
+<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a><span class="co">#&gt;       id     t     x     y  .joyn</span></span>
+<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a><span class="co">#&gt;    &lt;num&gt; &lt;int&gt; &lt;int&gt; &lt;num&gt; &lt;fctr&gt;</span></span>
+<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a><span class="co">#&gt; 1:     1     1    11    11  x &amp; y</span></span>
+<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a><span class="co">#&gt; 2:     1     2    12    11  x &amp; y</span></span>
+<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a><span class="co">#&gt; 3:     2     1    13    15  x &amp; y</span></span>
+<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a><span class="co">#&gt; 4:     3     2    14    NA      x</span></span>
+<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a><span class="co">#&gt; 5:    NA    NA    15    NA      x</span></span>
+<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a><span class="co">#&gt; 6:     4    NA    NA    16      y</span></span>
+<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a><span class="co"># Print all messages stored</span></span>
+<span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;all&quot;</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb11-30"><a href="#cb11-30" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id and y</span></span>
+<span id="cb11-31"><a href="#cb11-31" tabindex="-1"></a><span class="co">#&gt; ● Timing:The full joyn is executed in 0.000223 seconds.</span></span>
+<span id="cb11-32"><a href="#cb11-32" tabindex="-1"></a><span class="co">#&gt; ● Timing: The entire joyn function, including checks, is executed in 0.02035</span></span>
+<span id="cb11-33"><a href="#cb11-33" tabindex="-1"></a><span class="co">#&gt; seconds.</span></span>
+<span id="cb11-34"><a href="#cb11-34" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" tabindex="-1"></a><span class="co"># Print info messages only </span></span>
+<span id="cb11-36"><a href="#cb11-36" tabindex="-1"></a><span class="fu">joyn_msg</span>(<span class="at">msg_type =</span> <span class="st">&quot;info&quot;</span>)</span>
+<span id="cb11-37"><a href="#cb11-37" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Joyn&#39;s report available in variable .joyn</span></span>
+<span id="cb11-38"><a href="#cb11-38" tabindex="-1"></a><span class="co">#&gt; ℹ Note: Removing key variables id from id and y</span></span></code></pre></div>
 </div>
 
 
