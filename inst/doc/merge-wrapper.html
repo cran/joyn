@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -345,20 +345,20 @@ wrapper</h1>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(joyn)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a> x1 <span class="ot">=</span> <span class="fu">data.table</span>(<span class="at">id =</span> <span class="fu">c</span>(1L, 1L, 2L, 3L, <span class="cn">NA_integer_</span>),</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>                 <span class="at">t  =</span> <span class="fu">c</span>(1L, 2L, 1L, 2L, <span class="cn">NA_integer_</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a> x1 <span class="ot">=</span> <span class="fu">data.table</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="dt">L</span>, <span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="dv">3</span><span class="dt">L</span>, <span class="cn">NA_integer_</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>                 <span class="at">t  =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="cn">NA_integer_</span>),</span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>                 <span class="at">x  =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a> y1 <span class="ot">=</span> <span class="fu">data.table</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">4</span>),</span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>                 <span class="at">y  =</span> <span class="fu">c</span>(11L, 15L, <span class="dv">16</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>                 <span class="at">y  =</span> <span class="fu">c</span>(<span class="dv">11</span><span class="dt">L</span>, <span class="dv">15</span><span class="dt">L</span>, <span class="dv">16</span>))</span>
 <span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a> </span>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a> x2 <span class="ot">=</span> <span class="fu">data.table</span>(<span class="at">id1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>),</span>
 <span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>                 <span class="at">id2 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>                 <span class="at">t   =</span> <span class="fu">c</span>(1L, 2L, 1L, 2L, <span class="cn">NA_integer_</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>                 <span class="at">t   =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="cn">NA_integer_</span>),</span>
 <span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>                 <span class="at">x   =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">12</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">15</span>))</span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a> </span>
 <span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a> y2 <span class="ot">=</span> <span class="fu">data.table</span>(<span class="at">id  =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">3</span>),</span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>                 <span class="at">id2 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>                 <span class="at">y   =</span> <span class="fu">c</span>(11L, 15L, 20L, 13L, 10L),</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>                 <span class="at">y   =</span> <span class="fu">c</span>(<span class="dv">11</span><span class="dt">L</span>, <span class="dv">15</span><span class="dt">L</span>, <span class="dv">20</span><span class="dt">L</span>, <span class="dv">13</span><span class="dt">L</span>, <span class="dv">10</span><span class="dt">L</span>),</span>
 <span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>                 <span class="at">x   =</span> <span class="fu">c</span>(<span class="dv">16</span><span class="sc">:</span><span class="dv">20</span>))</span>
 <span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a> </span></code></pre></div>
 <p>This vignette describes the use of the <code>joyn</code>
@@ -426,12 +426,12 @@ name, you need to tell merge which columns you want to join
 by: <code>by.x</code> for the x data frame column name,
 and <code>by.y</code> for the y one. For example,</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">c</span>(1L, 1L, 2L, 3L, <span class="cn">NA_integer_</span>, <span class="cn">NA_integer_</span>),</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>                  <span class="at">t  =</span> <span class="fu">c</span>(1L, 2L, 1L, 2L, <span class="cn">NA_integer_</span>, 4L),</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="dt">L</span>, <span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="dv">3</span><span class="dt">L</span>, <span class="cn">NA_integer_</span>, <span class="cn">NA_integer_</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>                  <span class="at">t  =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="dv">1</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="cn">NA_integer_</span>, <span class="dv">4</span><span class="dt">L</span>),</span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>                  <span class="at">x  =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">16</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">4</span>, <span class="cn">NA_integer_</span>, <span class="dv">8</span>),</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>                  <span class="at">y  =</span> <span class="fu">c</span>(11L, 15L, <span class="dv">16</span>, 17L, 18L),</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>                  <span class="at">y  =</span> <span class="fu">c</span>(<span class="dv">11</span><span class="dt">L</span>, <span class="dv">15</span><span class="dt">L</span>, <span class="dv">16</span>, <span class="dv">17</span><span class="dt">L</span>, <span class="dv">18</span><span class="dt">L</span>),</span>
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>                  <span class="at">t  =</span> <span class="fu">c</span>(<span class="dv">13</span><span class="sc">:</span><span class="dv">17</span>))</span>
 <span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="fu">merge</span>(<span class="at">x    =</span> df1,</span>

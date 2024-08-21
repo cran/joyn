@@ -2,7 +2,7 @@ Package: joyn
 Type: Package
 Title: Tool for Diagnosis of Tables Joins and Complementary Join
         Features
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: c(person(given = "R.Andres", 
                     family = "Castaneda", 
                     email = "acastanedaa@worldbank.org",
@@ -29,13 +29,13 @@ Suggests: badger, covr, knitr, rmarkdown, testthat (>= 3.0.0), withr,
 Config/testthat/edition: 3
 Imports: rlang, data.table, cli, utils, collapse (>= 2.0.15), lifecycle
 Depends: R (>= 2.10)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-07-09 19:12:06 UTC; wb384996
+Packaged: 2024-08-19 22:24:55 UTC; wb384996
 Author: R.Andres Castaneda [aut, cre],
   Zander Prinsloo [aut],
   Rossana Tatulli [aut]
 Maintainer: R.Andres Castaneda <acastanedaa@worldbank.org>
 Repository: CRAN
-Date/Publication: 2024-07-10 07:40:02 UTC
+Date/Publication: 2024-08-21 01:20:02 UTC

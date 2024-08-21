@@ -1,6 +1,8 @@
-# joyn 0.2.2
+# joyn 0.2.3
 
-# joyn 0.2.1
+* Fix bug where the left join did not work when updating values and a full join was maintained.
+
+# joyn 0.2.2
 
 * Remove unmasking functions as we realized that they are not necessary. 
 
