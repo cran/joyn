@@ -149,6 +149,7 @@ joyn_msg("warn")
 
 
 ## ----err-ex1, error = TRUE----------------------------------------------------
+try({
 
 # ----------------- Error due to input table x with no columns -----------------
 
@@ -170,12 +171,15 @@ joyn(x = x_duplicates,
 
 joyn_msg("err")
 
+})
 
 ## ----err-ex2, error=TRUE------------------------------------------------------
+try({
 
 joyn(x = x1, y=y1, by="id", match_type = "1:1")
 joyn_msg("err")
 
+})
 
 ## ----joyn-msg-ex--------------------------------------------------------------
 

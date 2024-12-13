@@ -138,6 +138,7 @@ joyn(x = x5,
 
 
 ## ----join-type, error=TRUE----------------------------------------------------
+try({
 
 # Merging correctly but getting error because something is not right in the data
 joyn(x3, y3, by = "id", match_type = "1:1")
@@ -145,6 +146,7 @@ joyn(x3, y3, by = "id", match_type = "1:1")
 # Merging wrongly but getting NO errors because you did not use match_type
 joyn(x3, y3, by = "id")
 
+})
 
 ## ----full---------------------------------------------------------------------
 
